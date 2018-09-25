@@ -1,24 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="caG-0p-Lmf">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Display Flower View Controller-->
+        <scene sceneID="vHu-s3-HGC">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="w5l-Fa-czc" customClass="DisplayFlowerViewController" customModule="FlowerExpert" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J1S-WC-lPz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultFlowerBackground" translatesAutoresizingMaskIntoConstraints="NO" id="13D-IA-DnT">
+                                <rect key="frame" x="112" y="73" width="151" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="xho-hJ-XRO"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khX-tv-hWZ">
+                                <rect key="frame" x="10" y="438" width="355" height="219"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="219" id="E2H-qN-nyj"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sGc-x8-Dbw">
+                                <rect key="frame" x="37.5" y="241" width="300" height="188.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtd-Z7-Odq">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="30.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="0.2470588235" green="0.5568627451" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="loq-Mk-lMw">
+                                        <rect key="frame" x="0.0" y="38.5" width="300" height="150"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="u3t-8X-Xen" firstAttribute="bottom" secondItem="khX-tv-hWZ" secondAttribute="bottom" constant="10" id="FbK-cA-dEI"/>
+                            <constraint firstItem="khX-tv-hWZ" firstAttribute="leading" secondItem="u3t-8X-Xen" secondAttribute="leading" constant="10" id="IDY-zy-nLN"/>
+                            <constraint firstItem="khX-tv-hWZ" firstAttribute="top" secondItem="sGc-x8-Dbw" secondAttribute="bottom" constant="8.5" id="Jcs-Lw-O6C"/>
+                            <constraint firstItem="sGc-x8-Dbw" firstAttribute="top" secondItem="13D-IA-DnT" secondAttribute="bottom" constant="18" id="U4l-6r-pEn"/>
+                            <constraint firstItem="13D-IA-DnT" firstAttribute="top" secondItem="u3t-8X-Xen" secondAttribute="top" constant="9" id="bdc-Vg-YGv"/>
+                            <constraint firstItem="khX-tv-hWZ" firstAttribute="centerX" secondItem="sGc-x8-Dbw" secondAttribute="centerX" id="coR-e2-Lpn"/>
+                            <constraint firstItem="khX-tv-hWZ" firstAttribute="centerX" secondItem="13D-IA-DnT" secondAttribute="centerX" id="hAO-DG-Pcy"/>
+                            <constraint firstItem="13D-IA-DnT" firstAttribute="leading" secondItem="u3t-8X-Xen" secondAttribute="leading" constant="112" id="m64-9J-OP0"/>
+                            <constraint firstItem="u3t-8X-Xen" firstAttribute="trailing" secondItem="khX-tv-hWZ" secondAttribute="trailing" constant="10" id="nUL-lv-PWg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="u3t-8X-Xen"/>
                     </view>
+                    <navigationItem key="navigationItem" id="slo-Hb-FUX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="oe6-5m-Hgl">
+                            <color key="tintColor" red="0.24705882352941178" green="0.55686274509803924" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="carmeraButtonTapped:" destination="w5l-Fa-czc" id="gZo-fG-PbY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="khX-tv-hWZ" id="a6D-fI-gnp"/>
+                        <outlet property="flowerImageView" destination="13D-IA-DnT" id="M7L-a1-rC7"/>
+                        <outlet property="resultLabel" destination="dtd-Z7-Odq" id="aU5-cK-gfA"/>
+                        <outlet property="wikiResultImageView" destination="loq-Mk-lMw" id="1TO-iq-zl2"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cvr-m2-Uzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1079.2" y="-20.239880059970016"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qAz-Gu-KZY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="caG-0p-Lmf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WQm-jT-FCy">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="w5l-Fa-czc" kind="relationship" relationship="rootViewController" id="44Z-2A-Wle"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PK5-AK-Q2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="-20.239880059970016"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="DefaultFlowerBackground" width="151" height="151"/>
+    </resources>
 </document>
